@@ -40,3 +40,12 @@ class Grafo:
         if not self.m_dirigido:
             #Agrega la arista al otro nodo
             self.m_lista_adyacencia[nodo2].add((nodo1,peso))  
+
+    def imprmir_lista_adyacencia(self): 
+        '''
+        Funcion que imprime la lista de adyacencia en forma de matriz de adyacencia
+        '''
+        #Recorre la lista de adyacencia
+        for clave in self.m_lista_adyacencia.keys(): 
+            #Imprime el nodo y la lista de adyacencia de cada nodo en forma de matriz 
+            print("Nodo",clave, ": ", self.m_lista_adyacencia[clave]) 
