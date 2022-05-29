@@ -80,11 +80,24 @@ class Grafo:
                     cola.put(nodo_siguiente) 
                     #Agregar el nodo siguiente a la lista de visitados 
                     nodos_visitados.add(nodo_siguiente)
-
+                    
 if __name__ == '__main__':
     
     #Se crea o instancia el grafo con 5 nodos y no dirigido
     print("***** Grafo no dirigido *****")
     grafo = Grafo(5, False)  
     print("Agregando aristas al grafo")
+    #Agregar las aristas
+    #Agrega la arista (0,1) con peso 1
+    grafo.agregar_arista(0,1)
+    #Agrega la arista (0,2) con peso 1 
+    grafo.agregar_arista(0,2)
+    #Agrega la arista (1,2) con peso 1 
+    grafo.agregar_arista(1,2)
+    #Agrega la arista (2,3) con peso 1 
+    grafo.agregar_arista(2,3) 
+    #Agrega la arista (3,4) con peso 1
+    grafo.agregar_arista(3,4)
+    #Agrega la arista (4,0) con peso 1 
+    grafo.agregar_arista(4,0)
     
