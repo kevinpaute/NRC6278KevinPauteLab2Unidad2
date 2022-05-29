@@ -49,7 +49,7 @@ class Grafo:
         for clave in self.m_lista_adyacencia.keys(): 
             #Imprime el nodo y la lista de adyacencia de cada nodo en forma de matriz 
             print("Nodo",clave, ": ", self.m_lista_adyacencia[clave]) 
-            
+
     def recorrido_bfs(self,nodo_inicial): 
         '''
         Función que permite recorrer el grafo en amplitud
@@ -64,3 +64,19 @@ class Grafo:
         cola.put(nodo_inicial)
         #Agrega el nodo inicial a la lista de visitados
         nodos_visitados.add(nodo_inicial)
+
+        #Mientras la cola no este vacia
+        while not cola.empty():
+            #Sacar el primer elemento de la cola
+            nodo_actual = cola.get()
+            #Imprime el nodo actual
+            print(nodo_actual, end=" ") 
+
+            #Recorre la lista de adyacencia del nodo actual
+            for (nodo_siguiente, peso) in self.m_lista_adyacencia[nodo_actual]:
+                #Si el nodo siguiente no ha sido visitado
+                if nodo_siguiente not in nodos_visitados:
+                    #Agregar el nodo siguiente a la cola
+                    cola.put(nodo_siguiente) 
+                    #Agregar el nodo siguiente a la lista de visitados 
+                    nodos_visitados.add(nodo_siguiente) 
