@@ -7,7 +7,6 @@ class Grafo:
     Clase que permite representar un grafo con listas de adyacencia
 
         Atributos:
-
             m_numero_de_nodos (int): Número de nodos del grafo
             m_nodos (list): Lista de nodos del grafo
             m_dirigido (boolean): Si el grafo es dirigido o no
@@ -15,14 +14,14 @@ class Grafo:
 
         Metodos:
             agregar_arista(self,nodo1,nodo2,peso=1): Agrega una arista al grafo
-            imprmir_lista_adyacencia(self): Imprime la lista de adyacencia en forma de matriz
+            imprimir_lista_adyacencia(self): Imprime la lista de adyacencia en forma de matriz
             recorrido_bfs(self,nodo_inicial): Recorre el grafo en amplitud 
-
-    '''      
+    '''
+  
     #Constructor
     def __init__(self,numero_nodos,dirigido=True):
         '''
-        Constructor de la clase Grafo
+        Constructor de la clase Grafo 
             Parámetros:
                 numero_nodos (int): Número de nodos del grafo
                 dirigido (boolean): Si el grafo es dirigido o no
@@ -41,10 +40,11 @@ class Grafo:
         #Recorre la lista de nodos
         for nodo in self.m_nodos: 
             self.m_lista_adyacencia[nodo] = set()
+
     
     def agregar_arista(self,nodo1,nodo2,peso=1):  
         '''
-        Función que permite agregar una arista al grafo.
+        Función que permite agregar una arista al grafo 
             Parámetros:
                 nodo1 (int): Nodo de inicio
                 nodo2 (int): Nodo de fin
@@ -58,7 +58,7 @@ class Grafo:
             #Agrega la arista al otro nodo
             self.m_lista_adyacencia[nodo2].add((nodo1,peso))  
 
-    def imprmir_lista_adyacencia(self): 
+    def imprimir_lista_adyacencia(self): 
         '''Funcion que imprime la lista de adyacencia en forma de matriz de adyacencia'''
         #Recorre la lista de adyacencia
         for clave in self.m_lista_adyacencia.keys(): 
@@ -67,7 +67,7 @@ class Grafo:
 
     def recorrido_bfs(self,nodo_inicial): 
         '''
-        Función que permite recorrer el grafo en amplitud
+        Función que permite recorrer el grafo en amplitud 
             Parámetros:
                 nodo_inicial (int): Nodo inicial del recorrido
         '''
@@ -95,6 +95,8 @@ class Grafo:
                     cola.put(nodo_siguiente) 
                     #Agregar el nodo siguiente a la lista de visitados 
                     nodos_visitados.add(nodo_siguiente)
+
+print(Grafo.__doc__)#Imprime la documentación del grafo   
                     
 if __name__ == '__main__':
     '''Función principal'''
@@ -118,8 +120,9 @@ if __name__ == '__main__':
     grafo.agregar_arista(4,0)
     #Imprimir la lista de adyacencia
     print("\nLista de adyacencia")
-    grafo.imprmir_lista_adyacencia()
+    grafo.imprimir_lista_adyacencia()
     #Imprime el recorrido en amplitud
     print("\nRecorrido primero en anchura o amplitud")
     #Recorrido a partir del vertice 0
     grafo.recorrido_bfs(0)
+
