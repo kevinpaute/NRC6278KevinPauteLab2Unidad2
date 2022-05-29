@@ -100,4 +100,10 @@ if __name__ == '__main__':
     grafo.agregar_arista(3,4)
     #Agrega la arista (4,0) con peso 1 
     grafo.agregar_arista(4,0)
-    
+    #Imprimir la lista de adyacencia
+    print("\nLista de adyacencia")
+    grafo.imprmir_lista_adyacencia()
+    #Imprime el recorrido en amplitud
+    print("\nRecorrido primero en anchura o amplitud")
+    #Recorrido a partir del vertice 2 
+    grafo.recorrido_bfs(2)
