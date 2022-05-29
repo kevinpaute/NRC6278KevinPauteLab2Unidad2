@@ -79,4 +79,12 @@ class Grafo:
                     #Agregar el nodo siguiente a la cola
                     cola.put(nodo_siguiente) 
                     #Agregar el nodo siguiente a la lista de visitados 
-                    nodos_visitados.add(nodo_siguiente) 
+                    nodos_visitados.add(nodo_siguiente)
+
+if __name__ == '__main__':
+    
+    #Se crea o instancia el grafo con 5 nodos y no dirigido
+    print("***** Grafo no dirigido *****")
+    grafo = Grafo(5, False)  
+    print("Agregando aristas al grafo")
+    
