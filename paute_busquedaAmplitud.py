@@ -24,4 +24,19 @@ class Grafo:
         #Recorre la lista de nodos
         for nodo in self.m_nodos: 
             self.m_lista_adyacencia[nodo] = set()
-        
+    
+    def agregar_arista(self,nodo1,nodo2,peso=1):  
+        '''
+        Función que permite agregar una arista al grafo.
+            Parámetros:
+            nodo1 (int): Nodo de inicio
+            nodo2 (int): Nodo de fin
+            peso (int): Peso de la arista
+        ''' 
+        #Agrega la arista al nodo 1 del grafo
+        self.m_lista_adyacencia[nodo1].add((nodo2,peso)) 
+
+        #Si el grafo es no dirigido, se agrega la arista al otro nodo
+        if not self.m_dirigido:
+            #Agrega la arista al otro nodo
+            self.m_lista_adyacencia[nodo2].add((nodo1,peso))  
