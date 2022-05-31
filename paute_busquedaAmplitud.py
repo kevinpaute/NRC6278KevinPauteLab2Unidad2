@@ -61,9 +61,9 @@ class Grafo:
     def imprimir_lista_adyacencia(self): 
         '''Método que imprime la lista de adyacencia en forma de matriz de adyacencia'''
         #Recorre la lista de adyacencia
-        for clave in self.m_lista_adyacencia.keys(): 
+        for llave in self.m_lista_adyacencia.keys(): 
             #Imprime el nodo y la lista de adyacencia de cada nodo en forma de matriz 
-            print("Nodo",clave, ": ", self.m_lista_adyacencia[clave]) 
+            print("Nodo",llave, ": ", self.m_lista_adyacencia[clave]) 
 
     def recorrido_bfs(self,nodo_inicial): 
         '''
@@ -167,41 +167,6 @@ if __name__ == '__main__':
     grafo.imprimir_lista_adyacencia()
     #Imprime el recorrido en amplitud
     print("\nRecorrido primero en anchura o amplitud")
-    #Recorrido a partir del vertice 0
-    grafo.recorrido_bfs(0)
-
-    '''Prueba 4'''
-    print("***** Grafo 4 *****")
-    grafo = Grafo(5, False)  
-    print("\n\nAgregando aristas al grafo")
-    #Agregar las aristas
-    grafo.agregar_arista(4,0)
-    grafo.agregar_arista(4,1)
-    grafo.agregar_arista(1,4)
-    grafo.agregar_arista(3,1)
-    grafo.agregar_arista(4,3)
-    print("\nLista de adyacencia")
-    grafo.imprimir_lista_adyacencia()
-    #Imprime el recorrido en amplitud
-    print("\nRecorrido primero en anchura o amplitud")
-    #Recorrido a partir del vertice 4
-    grafo.recorrido_bfs(4)
-
-    '''Prueba 5'''
-    print("***** Grafo 5 *****")
-    grafo = Grafo(6, False)
-    print("\n\nAgregando aristas al grafo")
-    #Agregar las aristas
-    grafo.agregar_arista(0,1)
-    grafo.agregar_arista(1,2)
-    grafo.agregar_arista(3,2)
-    grafo.agregar_arista(4,3)
-    grafo.agregar_arista(4,1)
-    grafo.agregar_arista(4,5)
-    grafo.agregar_arista(5,2)
-    print("\nLista de adyacencia")
-    grafo.imprimir_lista_adyacencia()
-    #Imprime el recorrido en amplitud
-    print("\nRecorrido primero en anchura o amplitud")
     #Recorrido a partir del vertice 1
     grafo.recorrido_bfs(1)
+
