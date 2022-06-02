@@ -42,7 +42,7 @@ class Grafo:
             self.m_lista_adyacencia[nodo] = set()
 
     
-    def agregar_arista(self,nodo1,nodo2,peso=1):  
+    def agregar_arista(self,nodo1,nodo2,peso=1): 
         '''
         Método que permite agregar una arista al grafo 
             Parámetros:
@@ -63,7 +63,7 @@ class Grafo:
         #Recorre la lista de adyacencia
         for llave in self.m_lista_adyacencia.keys(): 
             #Imprime el nodo y la lista de adyacencia de cada nodo en forma de matriz 
-            print("Nodo",llave, ": ", self.m_lista_adyacencia[clave]) 
+            print("Nodo",llave, ": ", self.m_lista_adyacencia[llave]) 
 
     def recorrido_bfs(self,nodo_inicial): 
         '''
@@ -97,26 +97,34 @@ class Grafo:
                     nodos_visitados.add(nodo_siguiente)
                     
 if __name__ == '__main__':
-    '''Método principal'''
+    '''
+    Método principal
 
-    print(Grafo.__doc__)#Imprime la documentación del grafo   
+        Se crea un grafo con 5 nodos
+        Se agregan las aristas del grafo
+        Se imprime la lista de adyacencia
+        Se recorre el grafo en amplitud
+    '''   
     
-    '''Prueba 1'''
+    #PRUEBA 1
     print("***** Grafo 1 *****")
-    #Se crea o instancia el grafo con 5 nodos y no dirigido
-    grafo = Grafo(5, False)  
+    #Se crea o instancia el grafo con 6 nodos y no dirigido
+    grafo = Grafo(6, False)  
     print("Agregando aristas al grafo")
     #Agregar las aristas
+    #Agrega la arista (1,0) con peso 1 
     grafo.agregar_arista(1,0)
     #Agrega la arista (0,2) con peso 1 
     grafo.agregar_arista(0,2)
-    #Agrega la arista (1,2) con peso 1 
+    #Agrega la arista (4,1) con peso 1
     grafo.agregar_arista(4,1)
-    #Agrega la arista (2,3) con peso 1 
+    #Agrega la arista (4,3) con peso 1 
     grafo.agregar_arista(4,3) 
     #Agrega la arista (3,4) con peso 1
-    grafo.agregar_arista(3,4)
-    #Agrega la arista (4,0) con peso 1 
+    grafo.agregar_arista(3,5)
+    #Agrega la arista (5,2) con peso 1 
+    grafo.agregar_arista(5,2)
+    #Imprimir la lista de adyacencia 
     print("\nLista de adyacencia")
     grafo.imprimir_lista_adyacencia()
     #Imprime el recorrido en amplitud
@@ -124,25 +132,23 @@ if __name__ == '__main__':
     #Recorrido a partir del vertice 0
     grafo.recorrido_bfs(0)
 
-    '''Prueba 2'''
-    print("***** Grafo 2 *****")
-    #Se crea o instancia el grafo con 5 nodos y no dirigido
-    grafo = Grafo(7, False)  
-    print("\n\nAgregando aristas al grafo")
+    #PRUEBA 2
+    print("\n\n***** Grafo 2 *****")
+    #Se crea o instancia el grafo con 6 nodos y no dirigido
+    grafo = Grafo(6, False)  
+    print("Agregando aristas al grafo")
     #Agregar las aristas
     #Agrega la arista (0,1) con peso 1
     grafo.agregar_arista(0,1)
-    #Agrega la arista (0,2) con peso 1 
+    #Agrega la arista (0,3) con peso 1 
     grafo.agregar_arista(0,3)
     #Agrega la arista (1,2) con peso 1 
     grafo.agregar_arista(1,2)
-    #Agrega la arista (2,3) con peso 1 
+    #Agrega la arista (3,2) con peso 1 
     grafo.agregar_arista(3,2) 
     #Agrega la arista (3,4) con peso 1
     grafo.agregar_arista(3,4)
-    #Agrega la arista (4,0) con peso 1 
-    grafo.agregar_arista(4,0)
-    #Agrega la arista (4,5) con peso 1
+    #Agrega la arista (4,5) con peso 1 
     grafo.agregar_arista(4,5)
     #Imprimir la lista de adyacencia 
     print("\nLista de adyacencia")
@@ -152,21 +158,29 @@ if __name__ == '__main__':
     #Recorrido a partir del vertice 0
     grafo.recorrido_bfs(0)
 
-    '''Prueba 3'''
-    print("***** Grafo 3 *****")
-    #Se crea o instancia el grafo con 5 nodos y no dirigido
-    grafo = Grafo(5, False)  
-    print("\n\nAgregando aristas al grafo")
+    #PRUEBA 3
+    print("\n\n***** Grafo 3 *****")
+    #Se crea o instancia el grafo con 6 nodos y no dirigido
+    grafo = Grafo(6, False)  
+    print("Agregando aristas al grafo")
     #Agregar las aristas
-    grafo.agregar_arista(0,1)
-    grafo.agregar_arista(0,3)
-    grafo.agregar_arista(1,2)
-    grafo.agregar_arista(3,2)
-    grafo.agregar_arista(3,4)
+    #Agrega la arista (0,1) con peso 3
+    grafo.agregar_arista(0,1,3) 
+    #Agrega la arista (1,2) con peso 2
+    grafo.agregar_arista(1,2,2) 
+    #Agrega la arista (3,2) con peso 4
+    grafo.agregar_arista(3,2,4)
+    #Agrega la arista (4,3) con peso 3  
+    grafo.agregar_arista(4,3,3)  
+    #Agrega la arista (4,1) con peso 4
+    grafo.agregar_arista(4,1,4) 
+    #Agrega la arista (5,4) con peso 2
+    grafo.agregar_arista(5,4,2)
+    #Imprimir la lista de adyacencia   
     print("\nLista de adyacencia")
     grafo.imprimir_lista_adyacencia()
     #Imprime el recorrido en amplitud
     print("\nRecorrido primero en anchura o amplitud")
-    #Recorrido a partir del vertice 1
-    grafo.recorrido_bfs(1)
+    #Recorrido a partir del vertice 3
+    grafo.recorrido_bfs(3)
 
